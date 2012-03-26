@@ -60,6 +60,6 @@ http://mustache.github.com/mustache.5.html
 
 **content.csv:**  
 This file contains all data to be imported. Before running the
-import script, make sure that the CSV file is in UTF-8 format.  
+import script, make sure that the CSV file is in UTF-8 format.
 The 1st row defines the name of the variables to access each column.
 

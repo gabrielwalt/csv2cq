@@ -10,14 +10,14 @@ var fs      = require('fs'),
 
 // Just some help strings in case this script isn't correctly used
 var commandLineSyntax  = process.argv[0]+' '+process.argv[1].replace(process.env.PWD+'/', '')+' config.js',
-    configScriptSyntax = 'module.exports = {\
-\t\'csv\'       : \'content.csv\',\
-\t\'transform\' : function (content) {\
-\t\tcontent.importFile     = \'.content.xml\';\
-\t\tcontent.importPath     = \'content/\'+content.name;\
-\t\tcontent.importTemplate = \'template.mustache.xml\';\
-\t\treturn content;\
-\t}\
+    configScriptSyntax = 'module.exports = {\n\
+\t\'csv\'       : \'content.csv\',\n\
+\t\'transform\' : function (content) {\n\
+\t\tcontent.importFile     = \'.content.xml\';\n\
+\t\tcontent.importPath     = \'content/\'+content.name;\n\
+\t\tcontent.importTemplate = \'template.mustache.xml\';\n\
+\t\treturn content;\n\
+\t}\n\
 }';
 
 if (process.argv.length < 3) {
@@ -37,7 +37,7 @@ if (!('csv' in config &&'transform' in config)) {
 
 csv()
     .fromPath(config.csv)
-    .on('content', function (contentArray, index) {
+    .on('data', function (contentArray, index) {
         // The first line contains the variable keys
         if (index == 0) {
             keys = contentArray;
@@ -58,7 +58,7 @@ csv()
                     
                     // Render template
                     mu.compileAndRender(content.importTemplate, content)
-                        .on('content', function (text) {
+                        .on('data', function (text) {
                             writeStream.write(text);
                         })
                         .on('end', function () {
