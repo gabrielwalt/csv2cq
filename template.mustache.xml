@@ -2,7 +2,6 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:tags="[{{cq_tags}}]"
         cq:template="/apps/geometrixx-outdoors/templates/page_product"
         jcr:description="{{jcr_description}}"
         jcr:isCheckedOut="{Boolean}true"
@@ -15,14 +14,14 @@
             sling:resourceType="foundation/components/parsys">
             <product
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="{{sling_resourceType}}"
+                sling:resourceType="geometrixx-outdoors/components/product"
                 identifier="{{identifier}}"
                 price="${{price}}"{{#sizes}}
                 sizes="{{sizes}}"{{/sizes}}>
                 <image
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="geometrixx-outdoors/components/product/image"
-                    fileReference="{{fileReference}}"/>
+                    fileReference="/content/dam/geometrixx-outdoors/products/{{jcr_title}}.jpg"/>
             </product>
             <tabctrl
                 jcr:primaryType="nt:unstructured"

@@ -8,7 +8,8 @@ A node.js script to convert a CSV file into CQ5 .content.xml files.
 
 ### Install ###
 
-1. node.js: http://nodejs.org/#download
+1. This script needs node.js, you can install it from here:  
+   http://nodejs.org/#download
 
 2. Install the following node.js packages: mkdirp, csv and mu2.  
    To do so, type the following into your command line:
