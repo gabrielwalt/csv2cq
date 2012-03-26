@@ -6,7 +6,7 @@ A node.js script to convert a CSV file into CQ5 .content.xml files.
 
 ---
 
-#### Install ####
+### Install ###
 
 1. node.js: http://nodejs.org/#download
 
@@ -16,7 +16,7 @@ A node.js script to convert a CSV file into CQ5 .content.xml files.
     > npm install csv  
     > npm install mu2  
 
-#### Import ####
+### Import ###
 
 1. In Excel, export the file in CSV format.
 2. Convert the exported CSV file to utf-8
@@ -30,7 +30,7 @@ This should have created a content folder with the whole product
 structure underneath. Don't forget that the generated files are
 named ".content.xml" and are thus hidden on UNIX systems.
 
-#### Implementation ####
+### Implementation ###
 
 This importer consists of 4 parts:
 
