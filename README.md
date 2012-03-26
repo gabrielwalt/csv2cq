@@ -13,6 +13,7 @@ A node.js script to convert a CSV file into CQ5 .content.xml files.
 
 2.  Install the following node.js packages: mkdirp, csv and mu2.  
     To do so, type the following into your command line:
+
     > npm install mkdirp  
     > npm install csv  
     > npm install mu2  
@@ -26,6 +27,7 @@ A node.js script to convert a CSV file into CQ5 .content.xml files.
     (eg. using Mac TextMate => Save As => utf-8).
 3.  In the command line, use node.js to run the csv2cq.js script.
     Provide the config.js script as arugment:
+
     > node csv2cq.js config.js
 
 This should have created a content folder with the whole product
